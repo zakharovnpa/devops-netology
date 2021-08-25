@@ -2,41 +2,39 @@
 
 #Первое изменение
 
-#Второе зменене
-В репозиторй terraform не попадут файлы:
-# Local .terraform directories
-**/.terraform/*
+#Второе изменене
 
-# .tfstate files
-*.tfstate
-*.tfstate.*
+#В  репозиторий terraform при коммитах будут исключены файлы и каталоги:
 
-# Crash log files
+# Локальных каталогов terraform
+** /. terraform / *
+
+# Файлы с информацией о версии terraform.
+* .tfstate
+* .tfstate. *
+
+# Файлы журнала сбоев
 crash.log
 
-# Exclude all .tfvars files, which are likely to contain sentitive data, such as
-# password, private keys, and other secrets. These should not be part of version
-# control as they are data points which are potentially sensitive and subject
-# to change depending on the environment.
-#
-*.tfvars
+# Файлы, которые могут содержать пароли и ключи.
+* .tfvars
 
-# Ignore override files as they are usually used to override resources locally and so
-# are not checked in
+# Файлы переопределения
 override.tf
 override.tf.json
-*_override.tf
-*_override.tf.json
+* _override.tf
+* _override.tf.json
 
-# Include override files you do wish to add to version control using negated pattern
-#
-# !example_override.tf
+# Включение файлов переопределения по шаблону
+! example_override.tf
 
-# Include tfplan files to ignore the plan output of command: terraform plan -out=tfplan
-# example: *tfplan*
+# Файлы для игнорирования вывода плана команды: terraform plan -out = tfplan
+* tfplan *
 
-# Ignore CLI configuration files
+# Файлы конфигурации CLI
 .terraformrc
 terraform.rc
+
+
 
 
