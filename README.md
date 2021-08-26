@@ -4,37 +4,44 @@
 
 #Второе изменене
 
-#В  репозиторий terraform при коммитах будут исключены файлы и каталоги:
+#Из версионного контроля в репозтории terraform на основании шаблонов в .gitignore будут удалены:
 
-# Локальных каталогов terraform
+# Каталоги с именем terraform, находящиеся в любом количестве вышестоящих директорий с любыми именами и с любым именем в одной нижестоящей поддиректории
 ** /. terraform / *
 
-# Файлы с информацией о версии terraform.
+# Файлы .tfstate с любым именем
 * .tfstate
-* .tfstate. *
 
-# Файлы журнала сбоев
-crash.log
-
-# Файлы, которые могут содержать пароли и ключи.
+# Файлы .tfvars с любым именем
 * .tfvars
 
-# Файлы переопределения
+# Файлы, в расширении которого есть имя tfstate, а вторая часть расшреня - с любым именем
+#Пример - qwerty.tfstate.zip
+* .tfstate. *
+
+# Файлы .log с именем crash
+crash.log
+
+# Файлы .tf с именем override
 override.tf
+
+# Файлы .tf.json с именем override
 override.tf.json
+
+# Файлы  .tf или tf.json c именем, которое содержит _override 
 * _override.tf
 * _override.tf.json
 
-# Включение файлов переопределения по шаблону
-! example_override.tf
-
-# Файлы для игнорирования вывода плана команды: terraform plan -out = tfplan
+# Файлы с любым расширением с именем, которое содержит tfplan
 * tfplan *
 
-# Файлы конфигурации CLI
+# Скрытые файлы с именем terraformrc
 .terraformrc
+
+ # Файлы .rc с именем terraform
 terraform.rc
 
-
+# Добавлять в репозиторий terraform файлы .tf с именем example_override
+! example_override.tf
 
 
